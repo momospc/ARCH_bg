@@ -2,7 +2,7 @@ name: Build Arch Linux Book (PDF)
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "master" ]
   workflow_dispatch:
 
 jobs:
@@ -10,7 +10,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
       - name: Install dependencies
         run: |
@@ -27,14 +28,15 @@ jobs:
         run: |
           pandoc "archlinux-практическо ръководство.md" \
             --pdf-engine=xelatex \
+            --include-before-body=titlepage.tex \
             --include-in-header=preamble.tex \
             -V documentclass=book \
             -V papersize=A5 \
             -V geometry:margin=2.5cm \
-            -V cover-image=cover.png \
             -o Arch_Linux_Prak_Rakovodstvo_BG.pdf
 
-      - uses: actions/upload-artifact@v4
+      - name: Upload PDF artifact
+        uses: actions/upload-artifact@v4
         with:
           name: Arch_Linux_Book_PDF
           path: Arch_Linux_Prak_Rakovodstvo_BG.pdf
