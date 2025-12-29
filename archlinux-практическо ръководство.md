@@ -4,7 +4,6 @@ lang: bg
 
 \pagenumbering{arabic}
 
----
 
 
 # Предговор
