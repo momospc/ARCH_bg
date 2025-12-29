@@ -13,5 +13,5 @@
 
 ## Build (PDF)
 ```bash
-pandoc "archlinux-практическо ръководство.md" --pdf-engine=xelatex --include-in-header=preamble.tex --include-before-body=titlepage.tex -V documentclass=book -V classoption=oneside -V papersize=A5 -V geometry:margin=2.5cm -o Arch_Linux_Prak_Rakovodstvo_BG.pdf
+pandoc "archlinux-практическо ръководство.md" --pdf-engine=xelatex --include-in-header=preamble.tex --include-before-body=titlepage.tex -V documentclass=book -V classoption=oneside -V top-level-division=chapter -V papersize=A5 -V geometry:margin=2.5cm -o Arch_Linux_Prak_Rakovodstvo_BG.pdf
 
