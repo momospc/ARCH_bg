@@ -1,17 +1,11 @@
-
-
-
-
----
----
 ---
 lang: bg
-date: 2025
 ---
+
+\pagenumbering{arabic}
 
 ---
 
----
 
 # Предговор
 
