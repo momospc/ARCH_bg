@@ -32,14 +32,9 @@ jobs:
             --include-before-body=titlepage.tex \
             -V documentclass=book \
             -V classoption=oneside \
+            -V top-level-division=chapter \
             -V papersize=A5 \
             -V geometry:margin=2.5cm \
             -o Arch_Linux_Prak_Rakovodstvo_BG.pdf
-
-      - name: Upload PDF artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: Arch_Linux_Book_PDF
-          path: Arch_Linux_Prak_Rakovodstvo_BG.pdf
 
 
